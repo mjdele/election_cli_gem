@@ -5,7 +5,9 @@ class ElectionCliGem::CLI
   end
 
   def national_poll
-    puts "Who Will Win the Presidency?"    
+    puts "Who Will Win the Presidency?"
+    puts "Today's FiveThirtyEight.com Polling Update:"
+    ElectionCliGem::Polls.scrape_national  
   end
 
 
