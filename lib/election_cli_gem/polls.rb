@@ -5,5 +5,9 @@ class ElectionCliGem::Polls
     puts "I'm scraping the National poll!!!"
   end
 
+  def self.scrape_state(state)
+    
+  end
+
 
 end
