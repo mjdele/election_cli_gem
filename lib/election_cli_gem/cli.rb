@@ -9,6 +9,7 @@ class ElectionCliGem::CLI
     puts ""
     puts "WHO WILL WIN THE PRESIDENCY?"
     puts "Today's FiveThirtyEight.com Polling Update:"
+    puts ""
     ElectionCliGem::Polls.scrape_national  
   end
 
