@@ -1,5 +1,5 @@
-require 'open-uri'
 require 'nokogiri'
+require 'open-uri'
 require 'pry'
 
 require_relative "./election_cli_gem/version"
