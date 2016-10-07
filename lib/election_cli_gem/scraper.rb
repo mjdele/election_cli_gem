@@ -11,16 +11,21 @@ class ElectionCliGem::Scraper
     puts "NATIONAL FORECAST --> Hillary Clinton: #{poll.dem_percent} / Donald Trump: #{poll.rep_percent}"
   end
 
-  def scrape_state(state)
-    html = "http://projects.fivethirtyeight.com/2016-election-forecast/#{state}"
-    doc = Nokogiri::HTML(open(html))
+  def scrape_states
+    doc = Nokogiri::HTML(open("http://projects.fivethirtyeight.com/2016-election-forecast/"))
+    doc.search("div.cardset").each do |cardset|
+      poll = ElectionCliGem::Polls.new
 
-    poll = ElectionCliGem::Polls.new
-    poll.region = doc.search("div.cardset.current h2.card-header-title.forecast.visible").text.gsub("Who will win ", "").chop
-    poll.dem_percent = doc.search("div.cardset.current div.candidate.one.dem  p.candidate-val.winprob").text
-    poll.rep_percent = doc.search("div.cardset.current div.candidate.three.rep p.candidate-val.winprob").text
+      header = cardset.search("h2.forecast.visible")
 
-    puts "#{poll.region.upcase} --> Hillary Clinton: #{poll.dem_percent} / Donald Trump: #{poll.rep_percent}"
+      if !header.empty?
+        poll.region = header.text.gsub("Who will win ", "").chop
+        poll.dem_percent = cardset.search("div.candidate.one.dem  p.candidate-val.winprob").text
+        poll.rep_percent = cardset.search("div.candidate.three.rep p.candidate-val.winprob").text
+
+        poll.save
+      end
+    end
   end
 
 
