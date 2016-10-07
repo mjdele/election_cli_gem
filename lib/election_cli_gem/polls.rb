@@ -11,5 +11,11 @@ class ElectionCliGem::Polls
     @@all << self
   end
 
+  def self.find_state(name)
+    @@all.detect do |poll|
+      poll.region == name
+    end
+  end
+
 
 end

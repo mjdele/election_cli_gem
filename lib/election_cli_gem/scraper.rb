@@ -20,7 +20,7 @@ class ElectionCliGem::Scraper
       header = cardset.search("h2.forecast.visible")
 
       if !header.empty?
-        poll.region = header.text.gsub("Who will win ", "").chop
+        poll.region = header.text.gsub("Who will win ", "").chop.upcase
         poll.dem_percent = cardset.search("div.candidate.one.dem  p.candidate-val.winprob").text
         poll.rep_percent = cardset.search("div.candidate.three.rep p.candidate-val.winprob").text
 
