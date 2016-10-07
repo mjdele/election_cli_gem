@@ -5,10 +5,11 @@ class ElectionCliGem::Scraper
     doc = Nokogiri::HTML(open(html))
 
     poll = ElectionCliGem::Polls.new
+    poll.region = "NATIONAL FORECAST"
     poll.dem_percent = doc.search("div.cardset.current div.candidate.one.dem  p.candidate-val.winprob").text
     poll.rep_percent = doc.search("div.cardset.current div.candidate.three.rep p.candidate-val.winprob").text
 
-    puts "NATIONAL FORECAST --> Hillary Clinton: #{poll.dem_percent} / Donald Trump: #{poll.rep_percent}"
+    poll.save
   end
 
   def scrape_states

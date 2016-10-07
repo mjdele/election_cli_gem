@@ -10,10 +10,13 @@ class ElectionCliGem::CLI
     puts "WHO WILL WIN THE PRESIDENCY?"
     puts "Today's FiveThirtyEight.com Polling Update:"
     puts ""
-    ElectionCliGem::Scraper.new.scrape_national  
+    ElectionCliGem::Scraper.new.scrape_national
+    poll = ElectionCliGem::Polls.all[0]
+    puts "#{poll.region} --> Hillary Clinton: #{poll.dem_percent} / Donald Trump: #{poll.rep_percent}"
   end
 
   def state_breakdown
+    ElectionCliGem::Scraper.new.scrape_states
     puts ""
     puts "Enter a state name to see individual state predictions (for D.C., use 'district of columbia') or type exit:"
     input = nil
