@@ -9,13 +9,11 @@ class ElectionCliGem::Polls
 
   def save
     @@all << self
-  end
+  end 
 
   def self.find_state(name)
     @@all.detect do |poll|
       poll.region == name
     end
   end
-
-
 end

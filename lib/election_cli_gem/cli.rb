@@ -44,6 +44,4 @@ class ElectionCliGem::CLI
     puts "New polls are always coming in. Check back in a few hours to see updated results."
     puts ""
   end
-
-
 end

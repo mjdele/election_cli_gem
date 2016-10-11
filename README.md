@@ -1,4 +1,4 @@
-# ElectionCliGem
+# Election CLI Gem
 
 This Ruby Gem accesses FiveThirtyEight.com's Presidential Election Forecast and provides a CLI to view the projected winner on the national level, as well as for each individual state.
 
@@ -20,7 +20,7 @@ Or install it yourself as:
 
 ## Usage
 
-Run: election-cli-gem after installing the gem.
+Run: election-cli-gem after installing the gem and follow the on-screen prompts.
 
 ## Development
 

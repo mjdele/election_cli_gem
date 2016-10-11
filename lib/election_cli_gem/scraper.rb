@@ -28,6 +28,4 @@ class ElectionCliGem::Scraper
       end
     end
   end
-
-
 end
