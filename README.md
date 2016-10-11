@@ -1,8 +1,6 @@
 # ElectionCliGem
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/election_cli_gem`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+This Ruby Gem accesses FiveThirtyEight.com's Presidential Election Forecast and provides a CLI to view the projected winner on the national level, as well as for each individual state.
 
 ## Installation
 
@@ -22,7 +20,7 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Run: election-cli-gem after installing the gem.
 
 ## Development
 
@@ -32,7 +30,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/election_cli_gem.
+Bug reports and pull requests are welcome on GitHub at https://github.com/mjdele/election_cli_gem.
 
 
 ## License
