@@ -18,7 +18,7 @@ class ElectionCliGem::CLI
   def state_breakdown
     ElectionCliGem::Scraper.new.scrape_states
     puts ""
-    puts "Enter a state name to see individual state predictions (for Washinton D.C., use 'D.C.') or type exit:"
+    puts "Enter a state name to see individual state predictions (for Washington D.C., use 'D.C.') or type exit:"
     input = nil
     while input != "exit"
       input = gets.strip.downcase
